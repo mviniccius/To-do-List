@@ -12,3 +12,12 @@ if(resultado){
 
 
 console.log(clc.green("imprimindo verde!"));
+
+var http = require("http");
+
+http.createServer(function(request, response){
+    response.write("primeiros passos no NodeJs fazendo Servidor");
+    response.end();
+}).listen(8081);
+
+console.log(clc.green("Servidor rodando na porta 8081"))
