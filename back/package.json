@@ -1,5 +1,16 @@
 {
   "dependencies": {
-    "cli-color": "^2.0.4"
-  }
+    "cli-color": "^2.0.4",
+    "express": "^5.1.0"
+  },
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "Teste tecnico emprego",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus Viniccius",
+  "license": "ISC"
 }
