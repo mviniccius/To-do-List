@@ -1,4 +1,5 @@
 <template>
+  <h1>{{ titulo }}</h1>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
@@ -10,6 +11,11 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data(){
+    return {
+      titulo: 'data bind!'
+    }
   }
 }
 </script>
