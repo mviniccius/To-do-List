@@ -2,7 +2,7 @@ var clc = require("cli-color");
 
 var funcao = require("./funcao.js");
 
-var resultado = funcao.validarIdade(18)
+var resultado = funcao.validarIdade(16)
 
 if(resultado){
     console.log(clc.green("pode tirar carteria"));
