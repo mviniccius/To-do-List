@@ -1,23 +1,14 @@
 var clc = require("cli-color");
 
-var funcao = require("./funcao.js");
+const express = require("express");
+const app = express();
+const port = 3000;
 
-var resultado = funcao.validarIdade(16)
+//Rota
+app.get("/home", (req, res) => {
+  res.send("Hello World");
+});
 
-if(resultado){
-    console.log(clc.green("pode tirar carteria"));
-}else{
-    console.log(clc.red("deve ter 18 anos para comecar a tirar carteria"));
-}
-
-
-console.log(clc.green("imprimindo verde!"));
-
-var http = require("http");
-
-http.createServer(function(request, response){
-    response.write("primeiros passos no NodeJs fazendo Servidor");
-    response.end();
-}).listen(8081);
-
-console.log(clc.green("Servidor rodando na porta 8081"))
+app.listen(port, () =>
+  console.log(`Servidor rodando em http:localhost:${port}`)
+);
