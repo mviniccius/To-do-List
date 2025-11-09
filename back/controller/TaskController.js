@@ -12,7 +12,7 @@ exports.getTodos = async (req, res) => {
   }
 };
 //criar tarefa
-exports.creatTodo = async (req, res) => {
+exports.createTodo = async (req, res) => {
   const { title } = req.body;
 
   if (!title) {

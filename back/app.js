@@ -1,14 +1,22 @@
-var clc = require("cli-color");
-
 const express = require("express");
-const app = express();
-const port = 3000;
+const connectDB = require("./database/db"); // conexao com o banco
+const todoRoutes = require("./routes/todoRoutes"); //Rotas para o CRUD
 
-//Rota
-app.get("/home", (req, res) => {
-  res.send("Hello World");
+//conectar DB
+connectDB();
+
+const app = express();
+
+// Permite que o Express leia o corpo das requisições como JSON (muito importante para o POST e PUT)
+app.use(express.json());
+
+// Toda requisição que começar com /api/todos será tratada pelo 'todoRoutes'
+app.use("/api/todos", todoRoutes);
+
+app.get("/", (req, res) => {
+  res.send("API da To-Do List rodando! Use /api/todos para acessar as rotas.");
 });
 
-app.listen(port, () =>
-  console.log(`Servidor rodando em http:localhost:${port}`)
-);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log(`Servidor rodando na porta:  ${PORT}`));
